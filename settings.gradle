@@ -1,0 +1,4 @@
+rootProject.name = 'Klog'
+
+include ':annotations',':library', ':sample'
+
