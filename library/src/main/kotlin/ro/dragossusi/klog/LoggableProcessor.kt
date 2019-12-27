@@ -106,9 +106,11 @@ class LoggableProcessor : AbstractProcessor() {
     }
 
     fun createLogFunction(funBuilder: FunSpec.Builder, pairs: Iterable<Pair<String, String>>) {
+        funBuilder.addStatement("logWriter.startLog()")
         pairs.forEach {
-            funBuilder.addStatement("logWriter.write(\"${it.first}\" to item.${it.second})\n")
+            funBuilder.addStatement("logWriter.write(\"${it.first}\" to item.${it.second})")
         }
+        funBuilder.addStatement("logWriter.endLog()")
     }
 
 }
