@@ -15,7 +15,7 @@ abstract class FileLogWriter() : LogWriter, Closeable {
     }
 
     override fun write(pair: Pair<String, Any>) {
-        writer!!.append("${pair.first} : ${pair.second}\n")
+        writer!!.appendln("${pair.first} : ${pair.second}")
     }
 
     override fun endLog() {
